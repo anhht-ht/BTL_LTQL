@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BTL_LTQL.Models.KTKL>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>KTKL</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Mã nhân viên</label>
+        </th>
+        <th>
+            <label>Khen thưởng - Kỷ luật</label>
+        </th>
+        <th>
+            <label>Lý do</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ma_nv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ktkl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lydo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Ma_nv }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Ma_nv }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Ma_nv })
+        </td>
+    </tr>
+}
+
+</table>

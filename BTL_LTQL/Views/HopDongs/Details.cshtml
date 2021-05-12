@@ -1,0 +1,51 @@
+﻿@model BTL_LTQL.Models.HopDong
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HopDong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ma_nv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ma_nv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_nv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_nv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngayky_hd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngayky_hd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Han_hd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Han_hd)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ma_hd }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

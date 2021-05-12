@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Nhân Viên", "index", "Nhanviens")</li>
+                    <li>@Html.ActionLink("Chức vụ", "index", "ChucVus")</li>
+                    <li>@Html.ActionLink("Phòng ban", "index", "Phongbans")</li>
+                    <li>@Html.ActionLink("Công tác", "index", "CongTacs")</li>
+                    <li>@Html.ActionLink("Dự án", "index", "DuAns")</li>
+                    <li>@Html.ActionLink("Hợp đồng", "index", "HopDongs")</li>
+                    <li>@Html.ActionLink("Trình độ", "index", "TrinhDos")</li>
+                    <li>@Html.ActionLink("KTKL", "index", "KTKLs")</li>
+                    @if (Session["idAccount"] == null)
+                    {
+                        <li>@Html.ActionLink("Đăng ký", "Register", "Home")</li>
+                        <li>@Html.ActionLink("Đăng nhập", "Login", "Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Đăng xuất","Logout","Home")</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

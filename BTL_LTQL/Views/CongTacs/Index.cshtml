@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BTL_LTQL.Models.CongTac>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Công tác</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Mã nhân viên</label>
+        </th>
+        <th>
+            <label>Công việc</label>
+        </th>
+        <th>
+            <label>Ngày bắt đầu</label>
+        </th>
+        <th>
+            <label>Ngày kết thúc</label>
+        </th>
+        <th>
+            <label>Nơi làm việc</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ma_nv)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Congviec)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngaybatdau)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngayketthuc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Noilamviec)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Ma_nv }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Ma_nv }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Ma_nv })
+    </td>
+</tr>
+}
+
+</table>

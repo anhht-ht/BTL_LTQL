@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BTL_LTQL.Models.TrinhDo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Trình độ</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Mã trình độ</label>
+        </th>
+        <th>
+            <label>Tên trình độ</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ma_trinhdo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten_trinhdo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Ma_trinhdo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Ma_trinhdo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Ma_trinhdo })
+        </td>
+    </tr>
+}
+
+</table>

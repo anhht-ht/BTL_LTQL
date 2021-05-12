@@ -1,0 +1,88 @@
+﻿@model IEnumerable<BTL_LTQL.Models.Nhanvien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nhân viên</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Mã nhân viên</label>
+        </th>
+        <th>
+            <label>Mã chức vụ</label>
+        </th>
+        <th>
+            <label>Tên Nhân viên</label>
+        </th>
+        <th>
+            <label>Số điện thoại</label>
+        </th>
+        <th>
+            <label>Ngày sinh</label>
+        </th>
+        <th>
+            <label>Giới tính</label>
+        </th>
+        <th>
+            <label>Quê quán</label>
+        </th>
+        <th>
+            <label>Dân tộc</label>
+        </th>
+        <th>
+            <label>Phòng ban</label>
+        </th>
+        <th>
+            <label>Trình độ</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ma_nv)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ma_chucvu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten_nv)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Sodienthoai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngaysinh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gioitinh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Quequan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Dantoc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phongban)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Trinhdo)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Ma_nv }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Ma_nv }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Ma_nv })
+    </td>
+</tr>
+}
+
+</table>

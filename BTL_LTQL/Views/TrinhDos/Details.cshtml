@@ -1,0 +1,27 @@
+﻿@model BTL_LTQL.Models.TrinhDo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TrinhDo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_trinhdo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_trinhdo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ma_trinhdo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

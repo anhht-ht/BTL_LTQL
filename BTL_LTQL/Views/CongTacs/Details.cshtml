@@ -1,0 +1,51 @@
+﻿@model BTL_LTQL.Models.CongTac
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CongTac</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Congviec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Congviec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaybatdau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaybatdau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngayketthuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngayketthuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Noilamviec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Noilamviec)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ma_nv }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

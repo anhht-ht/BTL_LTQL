@@ -1,0 +1,42 @@
+﻿@model BTL_LTQL.Models.Account
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Đăng ký</h2>
+<div class="container">
+    <div class="col-6">
+        <h1>Đăng ký tại đây</h1>
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                @Html.LabelFor(kh => kh.Name, "Họ Tên")
+                @Html.TextBoxFor(kh => kh.Name , new {@placeholder = "Họ Tên" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.Phone, "Số điện thoại")
+                @Html.TextBoxFor(kh => kh.Phone, new { @placeholder = "Số điện thoại" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.address, "Địa chỉ")
+                @Html.TextBoxFor(kh => kh.address, new { @placeholder = "Địa chỉ" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.email, "Email")
+                @Html.TextBoxFor(kh => kh.email, new { @placeholder = "Email" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.password, "Mật khẩu")
+                @Html.TextBoxFor(kh => kh.password, new { @placeholder = "Mật khẩu" })
+            </div>
+            <div>
+                @Html.LabelFor(kh => kh.Confirm_password, "Xác nhận mật khẩu")
+                @Html.TextBoxFor(kh => kh.Confirm_password, new { @placeholder = "Xác nhận mật khẩu" })
+            </div>
+            <input type="submit" value="đăng ký"/>
+        }
+    </div>
+</div>
+

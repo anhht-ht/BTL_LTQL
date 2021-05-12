@@ -1,0 +1,91 @@
+﻿@model BTL_LTQL.Models.Nhanvien
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nhanvien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ma_chucvu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ma_chucvu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_nv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_nv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sodienthoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sodienthoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaysinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaysinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gioitinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gioitinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quequan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quequan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dantoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dantoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phongban)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phongban)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trinhdo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trinhdo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ma_nv }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

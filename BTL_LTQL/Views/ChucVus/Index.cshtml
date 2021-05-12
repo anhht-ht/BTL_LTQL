@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BTL_LTQL.Models.ChucVu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chức vụ</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Mã chức vụ</label>
+        </th>
+        <th>
+            <label>Tên chức vụ</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ma_chucvu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten_chucvu)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Ma_chucvu }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Ma_chucvu }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Ma_chucvu })
+        </td>
+    </tr>
+}
+
+</table>
